@@ -6,7 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+  integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  ></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,9 +35,9 @@
     </header>
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item"><a href="" class="nav__link">사전등록</a></li>
+        <li class="nav__item is_active"><a href="" class="nav__link">사전등록</a></li>
         <li class="nav__item"><a href="" class="nav__link">이벤트</a></li>
-        <li class="nav__item nav__item--rwby"><a href="" class="nav__link">RWBY<br>Crusader Quest</a></li>
+        <li class="nav__item nav__item--rwby"><a href="" class="nav__link">RWBY<br> &#88; <br>Crusader Quest</a></li>
         <li class="nav__item"><a href="" class="nav__link">Coming Soon</a></li>
         <li class="nav__item"><a href="" class="nav__link">총력전</a></li>
       </ul>
@@ -63,8 +68,105 @@
         </div>
       </section>
       <!-- //Spot Section -->
-    </div>
 
+      <!--Register Section-->
+      <div class="section register">
+        <div class="inner">
+          <h2 class="register__title"><img class="register__title-img" src="img/img_pc_title2.png" alt=""></h2>
+          <p class="section__desc">2022년 HASLA SUMMER CAMP <em class="txt-yellow">사전등록</em>으로 어마어마한 선물을 예약하세요! <br>사전등록해주신 모든 용사단장님께 <em class="txt-yellow">특별한 선물</em>을 드립니다!</p>
+          <div class="register__form">
+            <div class="register__deco">
+              <span class="register__deco-img register__deco-img--tent"></span>
+              <span class="register__deco-img register__deco-img--mountant"></span>
+              <span class="register__deco-img register__deco-img--car"></span>
+            </div>
+            <form class="form" action="">
+              <fieldset>
+                <h3 class="form__title"><img class="form__title-img" src="img/img_pc_title_form.png" alt=""></h3>
+                <div class="form__infor">
+                  <p class="form__time">사전등록 기간</p>
+                  <p class="form__time-des">2022년 8월 11일 (목) &#126; 8월 25일 (목) 오후 11:59:59 까지</p>
+                  <div class="form__input"><input class="form__input-text" placeholder="Email" type="text"></div>
+                  <p class="form__noti">※사전등록 보상은 종료일 8월25일 이후 순차적으로 발송합니다. 상세 일정은 공식 페이스북에서 안내 예정입니다.</p>
+                  <ul class="form__checkbox">
+                    <li class="checkbox">
+                      <input class="checkbox__input" type="checkbox" name="" id="">
+                      <label class="checkbox__label" for="">개인 정보 수집 및 이용에 동의합니다.</label>
+                    </li>
+                    <li class="checkbox">
+                      <input class="checkbox__input" type="checkbox" name="" id="">
+                      <label class="checkbox__label" for="">사전등록 이벤트 관련 안내 사항의 메일 수신에 동의합니다.</label>
+                    </li>
+                    <li class="checkbox">
+                      <input class="checkbox__input" type="checkbox" name="" id="">
+                      <label class="checkbox__label" for="">내용을 확인 하였으며, 모두 동의합니다.</label>
+                      <a class="more" href="">자세히 보기</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="form__register">
+                  <button class="form__register-btn">사전등록</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="register__gift">
+            <h3 class="register__gift-title">사전 등록 선물</h3>
+            <p class="register__gift-desc">사전등록 종료 후 <em class="txt-yellow">등록하신 모든 단장님에게</em> 선물을 보내 드려요!</p>
+            <ul class="register__gift-list">
+              <li class="register__gift-item">
+                <i class="icon icon-book"></i>
+                <p class="register__gift-detail">찢어진 고대의 서 <br>지원 상자</p>
+              </li>
+              <li class="register__gift-item">
+                <i class="icon icon-newchampion"></i>
+                <p class="register__gift-detail">신규 용사 선택권 <br>(숨겨진 용사 포함)</p>
+              </li>
+              <li class="register__gift-item">
+                <i class="icon icon-engravedstone"></i>
+                <p class="register__gift-detail">&#9733;5 각인석 선택권</p>
+              </li>
+              <li class="register__gift-item">
+                <i class="icon icon-costume"></i>
+                <p class="register__gift-detail">코스튬 선택권</p>
+              </li>
+              <li class="register__gift-item">
+                <i class="icon icon-legendarybread"></i>
+                <p class="register__gift-detail">전설의 빵 <br>지원상자 3개</p>
+              </li>
+              <li class="register__gift-item">
+                <i class="icon icon-succession"></i>
+                <p class="register__gift-detail">직업별 계승의 서 <br>지원 상자</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="characters">
+          <div class="characters__item">
+            <img class="characters__item-img" src="img/@tmp_pc_characters2.png" alt="">
+          </div>
+          <div class="characters__mes">
+            <div class="characters__text">
+              <span class="characters__text-content">
+                <em class="txt-blue">하슬라</em>에서의 <em class="txt-blue">여름 캠핑</em>, <br>우리 함께 즐겨요!
+              </span>
+            </div>
+            <img class="characters__mes-img" src="img/@tmp_pc_characters3.png" alt="">
+          </div>
+
+        </div>
+      </div>
+      <!-- //Register Section -->
+
+      <!-- Section-->
+      <!-- // Section -->
+
+      <!-- Section-->
+      <!-- // Section -->
+
+
+
+    </div>
     <!-- //Content -->
 
   </div>
