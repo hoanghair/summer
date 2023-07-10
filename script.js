@@ -23,10 +23,24 @@ $(document).ready(function (e) {
     $("html, body").animate({ scrollTop: topOffset }, 400);
   });
 
+  $('.floating__scrolltop-btn').click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 400);
+  });
+
   // Scroll the mouse
   $(window).scroll(function () {
     const scrollPosition = $(window).scrollTop();
     const halfWindowHeight = Math.round($(window).height() / 2);
+
+    const targetRegister = $(".nav__item a").attr("href");
+    const topOffset = Math.round($(targetRegister)?.offset()?.top);
+
+    if (scrollPosition >= topOffset) {
+      $('.floating').css({display: 'block'});
+    }else if (scrollPosition < topOffset) {
+      $('.floating').css({display: 'none'});
+    }
+
     const elements = [
       { selector: ".event", class: "is-transition" },
       { selector: ".register", class: "is-transition" },
@@ -48,6 +62,7 @@ $(document).ready(function (e) {
       }
     });
 
+    // animation scroll
     elements.forEach(function (element) {
       const targetElement = $(element.selector);
       const topOffsetElement = targetElement.offset().top;
@@ -59,4 +74,33 @@ $(document).ready(function (e) {
       }
     });
   });
+
+  // modal play video
+
+  const elementsVideos = [
+    { src: "https://www.youtube.com/embed/SGHq5Py2bY0?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+    { src: "https://www.youtube.com/embed/VyJvfzHO95M?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+    { src: "https://www.youtube.com/embed/SGHq5Py2bY0?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+    { src: "https://www.youtube.com/embed/VyJvfzHO95M?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+  ];
+
+  const overlay = $('.modal');
+  $(".js-play").click(function() {
+    const buttonIndex = $(".js-play").index(this);
+    console.log(buttonIndex);
+    const videoSrc = elementsVideos[buttonIndex].src;
+    console.log({ src: videoSrc});
+    $(".modal__video-iframe").attr("src", videoSrc);
+  
+    overlay.addClass("modal-center");
+    $(".modal__video").css({ display: "block" });
+  });
+  
+  $(".close, .modal").click(function() {
+    overlay.removeClass("modal-center");
+    $(".modal__video").css({ display: "none" });
+    $(".modal__video-iframe").attr("src", "");
+  });
 });
+
+

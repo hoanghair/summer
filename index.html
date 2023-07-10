@@ -49,17 +49,20 @@
           <h2 class="spot__title img-animation"><img class="spot__title-img" src="img/img_pc_title1.png" alt=""></h2>
           <p class="spot__desc txt-animation">이번 여름 휴가는 하슬라에서 캠핑을!<br><em class="txt-yellow">시원한 선물</em>이 펑펑 쏟아집니다!!</p>
           <div class="spot__play txt-animation">
-            <button class="spot__play-btn"></button>
+            <button class="spot__play-btn js-play"></button>
           </div>
           <div class="spot__app txt-animation">
             <a class="spot__app-link" href="">
               <img src="img/img_googleplay.svg" alt="">
             </a>
           </div>
+          <div class="spot__characters">
+            <img class="spot__characters-img" src="img/@tmp_pc_characters1.png" alt="">
+          </div>
         </div>
         <div class="scrolldown txt-animation">
           <button class="scrolldown__btn">
-            <img class="scrolldown__btn--img" src="img/img_pc_scroll_down.svg" alt="">
+            <img class="scrolldown__btn-img" src="img/img_pc_scroll_down.svg" alt="">
           </button>
         </div>
       </section>
@@ -192,7 +195,6 @@
             </div>
             <img class="characters__mes-img" src="img/@tmp_pc_characters5.png" alt="">
           </div>
-
       </section>
       <!-- // Event Section -->
 
@@ -206,11 +208,11 @@
             <ul class="rwby__video-list">
               <li class="rwby__list-item">
                 <img class="rwby__list-img" src="img/img_pc_rwby_video1.png" alt="">
-                <button class="rwby__list-btn"></button>
+                <button class="rwby__list-btn rwby__list-btn1 js-play"></button>
               </li>
               <li class="rwby__list-item">
                 <img class="rwby__list-img" src="img/img_pc_rwby_video2.png" alt="">
-                <button class="rwby__list-btn"></button>
+                <button class="rwby__list-btn rwby__list-btn2 js-play"></button>
               </li>
             </ul>
           </div>
@@ -243,7 +245,7 @@
             <div class="war__video-content">
               <div class="war__video-inner">
                 <img class="war__video-img" src="img/img_pc_war3.png" alt="">
-                <button class="war__list-btn"></button>
+                <button class="war__list-btn js-play"></button>
               </div>
             </div>
           </div>
@@ -265,6 +267,20 @@
         </div>
       </section>
       <!-- // Precautions Section -->
+
+      <!-- floating -->
+
+      <div class="floating">
+          <div class="floating__app">
+            <a class="floating__app-link" href=""></a>
+          </div>
+          <div class="floating__scrolltop">
+            <button class="floating__scrolltop-btn"></button>
+          </div>
+        </ul>
+      </div>
+
+      <!-- // floating -->
 
     </div>
     <!-- //Content -->
@@ -300,8 +316,25 @@
     </div>
     <!-- //Footer -->
   </div>
+
+  <!-- Modal content -->
+  <div class="layer">
+    <div class="modal">
+      <!-- Modal content -->
+      <div class="modal__video">
+        <iframe class="modal__video-iframe" src="" frameborder="0"></iframe>
+      </div>
+      <div class="close">
+        <button class="close__btn"></button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal content --> 
 </body>
 
 <script src="script.js"></script>
 
 </html>
+
+
+
