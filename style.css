@@ -201,11 +201,13 @@ input {
 }
 .sns__link {
   display: inline-block;
-  height: 100%;
+  width: 172px;
+  height: 34px;
 }
 .sns__link img {
   object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 .sns__link-youtube {
   margin-left: 26px;
@@ -326,15 +328,16 @@ input {
   width: 100%;
   height: 100%;
 }
-.spot__characters{
+.spot__characters {
   display: flex;
   position: absolute;
   width: 236px;
   height: 306px;
   right: -236px;
-  top: 278px;
+  /* top: 278px; */
+  top: 33%;
 }
-.spot__characters-img{
+.spot__characters-img {
   width: 100%;
   height: 100%;
   animation-name: animationBounce;
@@ -730,7 +733,7 @@ input {
 .info__list-item:last-child {
   margin-top: 20px;
 }
-.event .characters__item{
+.event .characters__item {
   position: absolute;
   width: 333px;
   height: 206px;
@@ -742,7 +745,7 @@ input {
   width: 100%;
   height: 100%;
 }
-.event .characters__mes{
+.event .characters__mes {
   position: absolute;
   right: 265px;
   top: 367px;
@@ -1033,27 +1036,27 @@ input {
 /* <!-- // Precautions Section --> */
 
 /* <!-- floating --> */
-.floating{
+.floating {
   display: none;
   position: fixed;
   right: 65px;
   bottom: 75px;
   z-index: 99;
 }
-.floating__app{
+.floating__app {
   width: 80px;
   height: 80px;
 }
-.floating__app:first-child{
+.floating__app:first-child {
   margin-bottom: 16px;
 }
-.floating__app-link{
+.floating__app-link {
   display: inline-block;
   background: url(img/ic_pc_googleplay2.svg) no-repeat center/cover;
   width: 100%;
   height: 100%;
 }
-.floating__scrolltop-btn{
+.floating__scrolltop-btn {
   cursor: pointer;
   display: inline-block;
   background: url(img/btn_top.svg) no-repeat center/cover;
@@ -1125,21 +1128,21 @@ input {
 
 /* <!-- Modal content --> */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 11; 
+  display: none;
+  position: fixed;
+  z-index: 11;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.modal-center{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: column;
+.modal-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
 }
 .modal__video {
   position: relative;
@@ -1149,7 +1152,7 @@ input {
   animation: fadeScale ease;
   box-sizing: border-box;
 }
-.modal__video-iframe{
+.modal__video-iframe {
   position: relative;
   display: inline-block;
   width: 1040px;
@@ -1157,8 +1160,8 @@ input {
   border-radius: 40px;
   box-sizing: border-box;
 }
-.modal__video::before{
-  content: '';
+.modal__video::before {
+  content: "";
   top: 0;
   left: 0;
   z-index: 12;
@@ -1172,7 +1175,7 @@ input {
   width: 64px;
   height: 64px;
 }
-.close__btn{
+.close__btn {
   background: url(img/btn_pc_close.svg) no-repeat center/cover;
   width: 100%;
   height: 100%;
@@ -1181,8 +1184,6 @@ input {
 }
 
 /* <!-- Modal content --> */
-
-
 
 /* <!-- Animation --> */
 .txt-animation {
@@ -1236,70 +1237,66 @@ input {
 }
 
 @keyframes animationBounce {
-  0%    { 
-      opacity: 0;
-      transform: translateY(-700px); 
+  0% {
+    opacity: 0;
+    transform: translateY(-700px);
   }
-  10%   { 
-      opacity: 1;
-      transform: translateY(0); 
+  10% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  25%   { 
-      transform: translateY(-350px); 
+  25% {
+    transform: translateY(-350px);
   }
-  45%   { 
-      transform: translateY(0); 
+  45% {
+    transform: translateY(0);
   }
-  60%   { 
-      transform: translateY(-100px); 
+  60% {
+    transform: translateY(-100px);
   }
-  70%   { 
-      transform: translateY(0); 
+  70% {
+    transform: translateY(0);
   }
-  80%   { 
-      transform: translateY(-20px); 
+  80% {
+    transform: translateY(-20px);
   }
-  85%   { 
-      transform: translateY(0); 
+  85% {
+    transform: translateY(0);
   }
-  90%   { 
-      transform: translateY(-10px); 
+  90% {
+    transform: translateY(-10px);
   }
-  95%   { 
-      transform: translateY(0); 
+  95% {
+    transform: translateY(0);
   }
-  97.5% { 
-      transform: translateY(-2px); 
+  97.5% {
+    transform: translateY(-2px);
   }
-  100%  { 
-      transform: translateY(0); 
+  100% {
+    transform: translateY(0);
   }
-  102.5% { 
-      transform: translateY(-1px); 
+  102.5% {
+    transform: translateY(-1px);
   }
-  105%  { 
-      transform: translateY(0); 
+  105% {
+    transform: translateY(0);
   }
-  115%  { 
-      transform: translateY(-10px); 
+  115% {
+    transform: translateY(-10px);
   }
-  120%  { 
-      transform: translateY(0); 
+  120% {
+    transform: translateY(0);
   }
 }
 @keyframes fadeScale {
-  0%{
+  0% {
     opacity: 0;
     transform: scale(0);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: scale(1);
   }
 }
 
 /* <!-- //Animation --> */
-
-
-
-
