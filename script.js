@@ -1,53 +1,41 @@
-$(document).ready(function (e) {
-  // Active
-  // $(".nav__link").click(function () {
-  //   $(".nav__item").removeClass("is_active");
-  //   $(this).parents(".nav__item").addClass("is_active");
-  // });
+$(document).ready(function () {
 
-  $(".nav__link").on("click", function (e) {
+  const overlay = $('.modal');
+  const elementsVideos = [
+    { src: "https://www.youtube.com/embed/SGHq5Py2bY0?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+    { src: "https://www.youtube.com/embed/VyJvfzHO95M?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+    { src: "https://www.youtube.com/embed/SGHq5Py2bY0?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+    { src: "https://www.youtube.com/embed/VyJvfzHO95M?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
+  ];
+
+  function preventDefaultClick(e) {
     e.preventDefault();
-  });
+  }
 
-  //click and scroll
-  $(".nav__item a").click(function (e) {
+  // scroll to target location on click
+  function scrollToLocation(e) {
     e.preventDefault();
     const targetLocation = $(this).attr("href");
     const topOffSet = Math.round($(targetLocation).offset().top);
     $("html, body").animate({ scrollTop: topOffSet }, 400);
-  });
+  }
 
-  $(".scrolldown").click(function () {
+  // scroll down when '.scrolldown' button is pressed
+  function scrollDown(e){
+    e.preventDefault();
     const targetLocation = $(".nav__link").attr("href");
-    const topOffset = Math.round($(targetLocation).offset().top);
-    $("html, body").animate({ scrollTop: topOffset }, 400);
-  });
+    const topOffSet = Math.round($(targetLocation).offset().top);
+    $("html, body").animate({ scrollTop: topOffSet }, 400);
+  }
+  //scroll to the top when clicking the button 
+  function scrollTop(){
+    $('html, body').animate({ scrollTop: 0 }, 400);
+  }
 
-  $('.floating__scrolltop-btn').click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 400);
-  });
-
-  // Scroll the mouse
-  $(window).scroll(function () {
+  //scroll active button nav
+  function scrollActive(){
     const scrollPosition = $(window).scrollTop();
     const halfWindowHeight = Math.round($(window).height() / 2);
-
-    const targetRegister = $(".nav__item a").attr("href");
-    const topOffset = Math.round($(targetRegister)?.offset()?.top);
-
-    if (scrollPosition >= topOffset) {
-      $('.floating').css({display: 'block'});
-    }else if (scrollPosition < topOffset) {
-      $('.floating').css({display: 'none'});
-    }
-
-    const elements = [
-      { selector: ".event", class: "is-transition" },
-      { selector: ".register", class: "is-transition" },
-      { selector: ".rwby", class: "is-transition" },
-      { selector: ".comingsoon", class: "is-transition" },
-      { selector: ".war", class: "is-transition" },
-    ];
 
     $(".nav__item").each(function () {
       const target = $(this).find(".nav__link").attr("href");
@@ -61,46 +49,71 @@ $(document).ready(function (e) {
         $(this).removeClass("is_active");
       }
     });
+  }
 
-    // animation scroll
-    elements.forEach(function (element) {
-      const targetElement = $(element.selector);
-      const topOffsetElement = targetElement.offset().top;
-      const halfTopOffset = topOffsetElement - halfWindowHeight;
+  //scroll, the 'scrollTop' button will show
+  function scrollShowBtn() {
+    const scrollPosition = $(window).scrollTop();
+    const targetRegister = $(".nav__item a").attr("href");
+    const topOffset = Math.round($(targetRegister)?.offset()?.top);
 
-      if (scrollPosition >= halfTopOffset) {
-        console.log("event abababa");
-        targetElement.addClass(element.class);
+    if(scrollPosition >= topOffset){
+      $('.floating').css({display: 'block'});
+    }else if(scrollPosition < topOffset){
+      $('.floating').css({display: 'none'});
+    }
+  }
+
+  //scroll, the animation will show
+  function scrollShowAnimation(){
+    const scrollPosition = $(window).scrollTop();
+    const halfWindowHeight = Math.round($(window).height() / 2);
+    const elements = [
+      { selector: ".event", class: "is-transition" },
+      { selector: ".register", class: "is-transition" },
+      { selector: ".rwby", class: "is-transition" },
+      { selector: ".comingsoon", class: "is-transition" },
+      { selector: ".war", class: "is-transition" },
+    ];
+
+    elements.forEach(function(element){
+      const targetElement = $(element.selector)
+      const topOffSetElement = Math.round(targetElement.offset().top) 
+      const halfTopOffset = topOffSetElement - halfWindowHeight
+      
+      if(scrollPosition >= halfTopOffset){
+        targetElement.addClass(element.class)
       }
-    });
-  });
+    })
+  }
 
-  // modal play video
-
-  const elementsVideos = [
-    { src: "https://www.youtube.com/embed/SGHq5Py2bY0?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
-    { src: "https://www.youtube.com/embed/VyJvfzHO95M?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
-    { src: "https://www.youtube.com/embed/SGHq5Py2bY0?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
-    { src: "https://www.youtube.com/embed/VyJvfzHO95M?autoplay=0&control=1&loop=0&rel=0&modestbranding=1" },
-  ];
-
-  const overlay = $('.modal');
-  $(".js-play").click(function() {
+  // modal video
+  // play video
+  function playVideo(){
     const buttonIndex = $(".js-play").index(this);
-    console.log(buttonIndex);
     const videoSrc = elementsVideos[buttonIndex].src;
-    console.log({ src: videoSrc});
+
     $(".modal__video-iframe").attr("src", videoSrc);
-  
     overlay.addClass("modal-center");
     $(".modal__video").css({ display: "block" });
-  });
-  
-  $(".close, .modal").click(function() {
+  }
+
+  //close video
+  function closeVideo(){
     overlay.removeClass("modal-center");
-    $(".modal__video").css({ display: "none" });
+    $(".modal__video").css({ display: 'none'});
     $(".modal__video-iframe").attr("src", "");
-  });
+  }
+
+  $(".nav__link").on("click", preventDefaultClick)
+  $('.nav__item a').click(scrollToLocation)
+  $('.scrolldown').click(scrollDown)
+  $('.floating__scrolltop-btn').click(scrollTop)
+  $(window).scroll(scrollActive);
+  $(window).scroll(scrollShowBtn);
+  $(window).scroll(scrollShowAnimation)
+  $('.js-play').click(playVideo)
+  $('.close, .modal').click(closeVideo)
 });
 
 

@@ -168,6 +168,12 @@ input {
   color: #283d32;
   text-decoration: underline;
 }
+.only-pc{
+  display: block;
+}
+.only-mo{
+  display: none;
+}
 /* // general */
 
 /* header */
@@ -320,10 +326,12 @@ input {
 }
 .spot__app {
   margin-top: 40px;
+}
+.spot__app-link {
   width: 220px;
   height: 66px;
 }
-.spot__app-link {
+.spot__app-link img {
   display: block;
   width: 100%;
   height: 100%;
@@ -359,6 +367,10 @@ input {
   padding-bottom: 17px;
   cursor: pointer;
 }
+.scrolldown__btn-img{
+  width: 190px;
+  height: 34px;
+}
 .scrolldown__btn::after {
   content: "";
   position: absolute;
@@ -367,7 +379,7 @@ input {
   transform: translateX(-50%);
   width: 23px;
   height: 16px;
-  background-image: url(img/ic_pc_down.svg);
+  background: url(img/ic_pc_down.svg) no-repeat center/cover;
 }
 /* <!-- //Spot Section --> */
 
@@ -386,7 +398,9 @@ input {
   z-index: 6;
 }
 .register .inner > .section__title,
-.register .inner > .section__desc {
+.register .inner > .section__desc,
+.register .inner > .register__form,
+.register .inner > .register__gift {
   opacity: 0;
 }
 .register .section__title {
@@ -396,7 +410,10 @@ input {
   line-height: 40px;
   margin-top: 10px;
 }
-
+.register .section__title-img {
+  width: 1017px;
+  height: 128px;
+}
 .register::before {
   content: "";
   position: absolute;
@@ -471,13 +488,12 @@ input {
   line-height: 40px;
 }
 .form__input {
-  width: 760px;
-  height: 68px;
+
   margin-top: 34px;
 }
 .form__input-text {
-  width: 100%;
-  height: 100%;
+  width: 760px;
+  height: 68px;
   padding: 20px 30px;
   background: url(img/bg_input_email.svg) no-repeat center/cover;
   box-sizing: border-box;
@@ -803,14 +819,17 @@ input {
 .rwby__list-item::before {
   content: "";
   position: absolute;
-  width: 457px;
-  height: 264px;
+  /* width: 457px;
+  height: 264px; */
+  width: 100%;
+  height: 100%;
   background: url(img/bg_pc_lightblue_small.svg) no-repeat center/cover;
   z-index: 5;
 }
 .rwby__list-item::after {
   content: "";
   position: absolute;
+  top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.15);
   width: 100%;
@@ -822,9 +841,12 @@ input {
   margin-left: 32px;
 }
 .rwby__list-img {
-  width: 457px;
-  height: 264px;
+  width: 100%;
+  height: 100%;
+  /* width: 457px;
+  height: 264px; */
   padding: 8px;
+  /* border-radius: 28px; */
   box-sizing: border-box;
 }
 .rwby__list-btn {
@@ -1211,6 +1233,12 @@ input {
   animation: animationAppear 1.8s forwards;
 }
 .is-transition > .inner > .war__video {
+  animation: animationAppear 1.8s forwards;
+}
+.is-transition > .inner > .register__form {
+  animation: animationAppear 1.8s forwards;
+}
+.is-transition > .inner > .register__gift {
   animation: animationAppear 1.8s forwards;
 }
 
