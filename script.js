@@ -56,9 +56,9 @@ $(document).ready(function () {
         $(this).removeClass("is_active");
       }
     });
-    if(scrollPosition > 0){
+    if (scrollPosition > 0) {
       $(".header").addClass("bg-header");
-    }else if(scrollPosition === 0){
+    } else if (scrollPosition === 0) {
       $(".header").removeClass("bg-header");
     }
   }
@@ -108,7 +108,7 @@ $(document).ready(function () {
     $(".modal__video-iframe").attr("src", videoSrc);
     overlay.addClass("modal-center");
     $(".modal__video").css({ display: "block" });
-    $('body').css('overflow', 'hidden');
+    $("body").css("overflow", "hidden");
   }
 
   //close video
@@ -116,45 +116,43 @@ $(document).ready(function () {
     overlay.removeClass("modal-center");
     $(".modal__video").css({ display: "none" });
     $(".modal__video-iframe").attr("src", "");
-    $('body').css('overflow', 'auto');
+    $("body").css("overflow", "auto");
   }
 
-    // modal nav
- // play modal
- var overLayModal = $('.modal__nav');
- function playModalNav() {
-  overLayModal.addClass("modal__center-nav");
-  $('body').css('overflow', 'hidden');
-}
-
-//close modal
-function closeModalNav() {
-  overLayModal.removeClass("modal__center-nav");
-  $('body').css('overflow', 'auto');
-  console.log();
-}
-// check box input
-$(".checkbox__input").change(function() {
-  const isChecked1 = $("#input1").prop("checked");
-  const isChecked2 = $("#input2").prop("checked");
-  
-  if (isChecked1 && isChecked2) {
-    $("#selectAll").prop("checked", true);
-  } 
-  else {
-    $("#selectAll").prop("checked", false);
+  // modal nav
+  // play modal
+  var overLayModal = $(".modal__nav");
+  function playModalNav() {
+    overLayModal.addClass("modal__center-nav");
+    $("body").css("overflow", "hidden");
   }
-});
-$("#selectAll").click(function() {
-$("input[type=checkbox]").prop("checked", $(this).prop("checked"));
-});
 
-$("input[type=checkbox]").click(function() {
-if (!$(this).prop("checked")) {
-  $("#selectAll").prop("checked", false);
-}
-});
+  //close modal
+  function closeModalNav() {
+    overLayModal.removeClass("modal__center-nav");
+    $("body").css("overflow", "auto");
+    console.log();
+  }
+  // check box input
+  $(".checkbox__input").change(function () {
+    const isChecked1 = $("#input1").prop("checked");
+    const isChecked2 = $("#input2").prop("checked");
 
+    if (isChecked1 && isChecked2) {
+      $("#selectAll").prop("checked", true);
+    } else {
+      $("#selectAll").prop("checked", false);
+    }
+  });
+  $("#selectAll").click(function () {
+    $("input[type=checkbox]").prop("checked", $(this).prop("checked"));
+  });
+
+  $("input[type=checkbox]").click(function () {
+    if (!$(this).prop("checked")) {
+      $("#selectAll").prop("checked", false);
+    }
+  });
 
   $(".nav__link").on("click", preventDefaultClick);
   $(".nav__item a").click(scrollToLocation);
