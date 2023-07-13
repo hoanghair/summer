@@ -163,7 +163,7 @@ input {
   z-index: 5;
 }
 .more {
-  margin-left: 10px;
+  margin-left: 8px;
   font-size: 16px;
   color: #283d32;
   text-decoration: underline;
@@ -536,6 +536,7 @@ input {
   line-height: 20px;
   color: var(--txt-grey);
   margin-left: 15px;
+  flex: 1;
 }
 .checkbox:last-child {
   margin-bottom: 0;

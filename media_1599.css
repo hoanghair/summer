@@ -162,6 +162,8 @@
   .form__input-text {
     padding: 1.251vw 1.876vw;
     font-size: 1.626vw;
+    width: 47.530vw;
+    height: 4.253vw;
   }
   .form__noti {
     font-size: 0.938vw;
