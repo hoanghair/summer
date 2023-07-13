@@ -16,6 +16,9 @@
   <div class="wrap">
     <!-- Header -->
     <header class="header">
+      <div class="menu only-mo">
+        <button class="menu__btn js-open"></button>
+      </div>
       <h1 class="logo">
         <a href="" class="logo__link">
           <img src="./img/logo_pc.svg" alt="" class="logo__img only-pc">
@@ -33,7 +36,7 @@
         </a>
       </div>
     </header>
-    <nav class="nav">
+    <nav class="nav modal__nav">
       <ul class="nav__list">
         <li class="nav__item"><a href="#register" class="nav__link">사전등록</a></li>
         <li class="nav__item"><a href="#event" class="nav__link">이벤트</a></li>
@@ -42,6 +45,9 @@
         <li class="nav__item"><a href="#comingsoon" class="nav__link">Coming Soon</a></li>
         <li class="nav__item"><a href="#war" class="nav__link">총력전</a></li>
       </ul>
+      <div class="nav__close">
+        <button class="nav__close-btn"></button>
+      </div>
     </nav>
     <!-- //Header -->
 
@@ -110,17 +116,16 @@
                   <p class="form__noti">※사전등록 보상은 종료일 8월25일 이후 순차적으로 발송합니다. 상세 일정은 공식 페이스북에서 안내 예정입니다.</p>
                   <ul class="form__checkbox">
                     <li class="checkbox">
-                      <input class="checkbox__input" type="checkbox" name="" id="">
-                      <label class="checkbox__label" for="">개인 정보 수집 및 이용에 동의합니다.</label>
+                      <input class="checkbox__input" type="checkbox" name="" id="input1">
+                      <label class="checkbox__label" for="input1">개인 정보 수집 및 이용에 동의합니다.</label>
                     </li>
                     <li class="checkbox">
-                      <input class="checkbox__input" type="checkbox" name="" id="">
-                      <label class="checkbox__label" for="">사전등록 이벤트 관련 안내 사항의 메일 수신에 동의합니다.</label>
+                      <input class="checkbox__input" type="checkbox" name="" id="input2">
+                      <label class="checkbox__label" for="input2">사전등록 이벤트 관련 안내 사항의 메일 수신에 동의합니다.</label>
                     </li>
                     <li class="checkbox">
-                      <input class="checkbox__input" type="checkbox" name="" id="">
-                      <label class="checkbox__label" for="">내용을 확인 하였으며, 모두 동의합니다.</label>
-                      <a class="more" href="">자세히 보기</a>
+                      <input class="checkbox__input" type="checkbox" name="" id="selectAll">
+                      <label class="checkbox__label" for="selectAll">내용을 확인 하였으며, 모두 동의합니다.<a class="more" href="">자세히 보기</a></label>
                     </li>
                   </ul>
                 </div>

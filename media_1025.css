@@ -14,15 +14,28 @@
   }
   /* header */
   .header {
-    padding: 3.002vw 3.002vw 0;
+    padding: 25px 30px;
+    align-items: center;
   }
-
+  .bg-header{
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .menu__btn{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: url(img/ic_mo_menu.png) no-repeat center/cover;
+  }
+  .logo{
+    position: absolute;
+    left: 83px;
+  }
+  .nav{
+    right: 35px;
+  }
   .logo__link {
-    width: 13.133vw;
-    height: 4.503vw;
-  }
-  .sns {
-    height: 2.126vw;
+    width: 116px;
+    height: 40px;
   }
   .sns__link {
     width: 32px;
@@ -35,6 +48,11 @@
   /* <!--Spot Section--> */
   .spot .inner {
     min-height: 580px;
+  }
+  .spot::after{
+    width: 100%;
+    height: calc(100% - 56px);
+    background-image: url(img/bg_mo_tree.png);
   }
   .spot__sub {
     font-size: 20px;
@@ -69,6 +87,8 @@
   .spot__characters {
     width: 97px;
     height: 125px;
+    right: -48px;
+    top: 58%;
   }
   .scrolldown {
     margin-bottom: 0;
@@ -182,6 +202,12 @@
     height: 16px;
     background: url(img/bg_mo_checkbox__default.png) no-repeat center/cover;
   }
+  .checkbox__input:checked {
+    width: 16px;
+    height: 16px;
+    background: url(img/bg_mo_checkbox_actived.png) no-repeat center/cover;
+
+}
   .checkbox__label {
     font-size: 11px;
     line-height: 16px;
@@ -233,19 +259,17 @@
     font-size: 10px;
     height: 45px;
   }
-  .characters {
-  }
   .register .characters__item-img {
     width: 171px;
     height: 129px;
   }
   .register .characters__mes-img {
-    right: 35%;
+    right: auto;
     width: 137px;
     height: 90px;
   }
   .register .characters__text {
-    right: 358px;
+    right: auto;
     bottom: 98px;
     width: 156px;
     height: 74px;
@@ -325,16 +349,14 @@
   .event .characters__item {
     width: 189px;
     height: 119px;
-    left: 333px;
+    /* left: 333px; */
+    left: 25px;
     bottom: 149px;
   }
-  .event .characters__item-img {
-  }
+  /* .event .characters__item-img {
+  } */
   .event .characters__mes {
-    position: absolute;
-    right: 265px;
-    top: 367px;
-    z-index: 6;
+    right: auto;
   }
   .event .characters__text {
     width: 201px;
@@ -348,6 +370,12 @@
   /* <!-- // Event Section --> */
 
   /* <!-- Rwby Section--> */
+  .rwby {
+    width: 100%;
+    height: 812px;
+    padding: 92px 0;
+    background: url(img/bg_mo_rwby.png) no-repeat bottom center/cover;
+  }
   .rwby .section__title {
     width: 286px;
     height: 124px;
@@ -381,6 +409,12 @@
   /* <!-- // Rwby Section --> */
 
   /* <!-- Comingsoon Section--> */
+  .comingsoon {
+    width: 100%;
+    height: 812px;
+    padding: 92px 0;
+    background: url(img/bg_mo_rwby.png) no-repeat center/cover;
+}
   .comingsoon .section__title {
     width: 286px;
     height: 124px;
@@ -388,6 +422,9 @@
   /* <!-- // Comingsoon Section --> */
 
   /* <!-- War Section--> */
+  .war::before {
+    width: 100%;
+}
   .war .section__title {
     width: 219px;
     height: 43px;
@@ -537,10 +574,42 @@
     width: 52px;
     height: 52px;
   }
-  /* <!-- floating --> */
-  .nav {
-    display: none;
-  }
+  /* <!-- //floating --> */
+
+/* <!-- modal nav --> */
+.nav{
+  transform: translateY(0);
+}
+.nav__close{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  background: url(img/btn_pc_close.svg) no-repeat center/cover;
+}
+.modal__nav {
+  display: none;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal__center-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
+}
+
+/* <!-- //modal nav --> */
+
+
+
 
   /* .register__form{
       display: none;
@@ -548,4 +617,16 @@
   /* .register__gift-list{
       display: none;
     } */
+}
+
+
+
+@media screen and (max-width: 420px) {
+  .spot__play {
+    width: 70px;
+    height: 70px;
+}
+.event .characters__mes {
+  right: 31px;
+}
 }
