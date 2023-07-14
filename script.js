@@ -121,17 +121,18 @@ $(document).ready(function () {
 
   // modal nav
   // play modal
-  var overLayModal = $(".modal__nav");
+  var overLayModalNav = $(".modal__nav");
   function playModalNav() {
-    overLayModal.addClass("modal__center-nav");
+    overLayModalNav.addClass("modal__center-nav");
     $("body").css("overflow", "hidden");
   }
 
   //close modal
   function closeModalNav() {
-    overLayModal.removeClass("modal__center-nav");
+    overLayModalNav.removeClass("modal__center-nav");
     $("body").css("overflow", "auto");
   }
+
   // check box input
   $(".checkbox__input").change(function () {
     const isChecked1 = $("#input1").prop("checked");
@@ -148,7 +149,7 @@ $(document).ready(function () {
   });
 
   $(".checkbox__input").click(function () {
-    if (!$(this).prop("checked")) {
+    if ($(this).prop("checked")) {
       $("#selectAll").prop("checked", false);
     }
   });
