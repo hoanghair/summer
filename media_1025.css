@@ -17,20 +17,20 @@
     padding: 25px 30px;
     align-items: center;
   }
-  .bg-header {
+  .bg-header{
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .menu__btn {
+  .menu__btn{
     cursor: pointer;
     width: 24px;
     height: 24px;
     background: url(img/ic_mo_menu.png) no-repeat center/cover;
   }
-  .logo {
+  .logo{
     position: absolute;
     left: 83px;
   }
-  .nav {
+  .nav{
     right: 35px;
   }
   .logo__link {
@@ -49,7 +49,7 @@
   .spot .inner {
     min-height: 580px;
   }
-  .spot::after {
+  .spot::after{
     width: 100%;
     height: calc(100% - 56px);
     background-image: url(img/bg_mo_tree.png);
@@ -204,7 +204,8 @@
     width: 16px;
     height: 16px;
     background: url(img/bg_mo_checkbox_actived.png) no-repeat center/cover;
-  }
+
+}
   .checkbox__label {
     font-size: 11px;
     line-height: 16px;
@@ -406,7 +407,7 @@
     height: 812px;
     padding: 92px 0;
     background: url(img/bg_mo_rwby.png) no-repeat center/cover;
-  }
+}
   .comingsoon .section__title {
     width: 286px;
     height: 124px;
@@ -416,7 +417,7 @@
   /* <!-- War Section--> */
   .war::before {
     width: 100%;
-  }
+}
   .war .section__title {
     width: 219px;
     height: 43px;
@@ -568,52 +569,47 @@
   }
   /* <!-- //floating --> */
 
-  /* <!-- modal nav --> */
-  .nav {
-    transform: translateY(0);
-  }
-  .nav__close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 64px;
-    height: 64px;
-    background: url(img/btn_pc_close.svg) no-repeat center/cover;
-  }
-  .modal__nav {
-    display: none;
-    position: fixed;
-    z-index: 11;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  .modal__center-nav {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: column;
-  }
-
-  /* <!-- //modal nav --> */
-
-  /* .register__form{
-      display: none;
-    } */
-  /* .register__gift-list{
-      display: none;
-    } */
+/* <!-- modal nav --> */
+.nav{
+  transform: translateY(0);
 }
+.nav__close{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  background: url(img/btn_pc_close.svg) no-repeat center/cover;
+}
+.modal__nav {
+  display: none;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal__center-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
+}
+/* <!-- //modal nav --> */
+
+}
+
+
 
 @media screen and (max-width: 420px) {
   .spot__play {
     width: 70px;
     height: 70px;
-  }
-  .event .characters__mes {
-    right: 31px;
-  }
+}
+.event .characters__mes {
+  right: 31px;
+}
 }
