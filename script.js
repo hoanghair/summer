@@ -131,7 +131,6 @@ $(document).ready(function () {
   function closeModalNav() {
     overLayModal.removeClass("modal__center-nav");
     $("body").css("overflow", "auto");
-    console.log();
   }
   // check box input
   $(".checkbox__input").change(function () {
@@ -145,10 +144,10 @@ $(document).ready(function () {
     }
   });
   $("#selectAll").click(function () {
-    $("input[type=checkbox]").prop("checked", $(this).prop("checked"));
+    $(".checkbox__input").prop("checked", $(this).prop("checked"));
   });
 
-  $("input[type=checkbox]").click(function () {
+  $(".checkbox__input").click(function () {
     if (!$(this).prop("checked")) {
       $("#selectAll").prop("checked", false);
     }
