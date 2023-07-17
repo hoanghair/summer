@@ -115,6 +115,7 @@ input {
   --txt-blue2: #0f0a4a;
   --txt-black: #000;
   --txt-red: #ca3838;
+  --txt-green: #1e9f7a;
 }
 
 .txt-yellow {
@@ -128,6 +129,10 @@ input {
 .txt-red {
   font-style: normal;
   color: var(--txt-red);
+}
+.txt-green {
+  font-style: normal;
+  color: var(--txt-green);
 }
 /* // variable css */
 
@@ -784,6 +789,9 @@ input {
   width: 199px;
   height: 185px;
 }
+.event .characters > .characters__mes {
+  opacity: 0;
+}
 /* <!-- // Event Section --> */
 
 /* <!-- Rwby Section--> */
@@ -1242,12 +1250,6 @@ input {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.modal__center-caseview {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: column;
-}
 .popup__content {
   display: none;
   position: fixed;
@@ -1260,10 +1262,9 @@ input {
   border-right: 8px solid #688a35;
   z-index: 99;
   background-color: #f1ebca;
-  /* animation: fadeScale ease; */
   box-sizing: border-box;
 }
-.popup__content.show {
+.popup__content.is_show {
   display: block;
 }
 .popup__content::before{
@@ -1284,7 +1285,7 @@ input {
   height: 24px;
   background: url(img/bg_pc_pop_after.png) no-repeat center/cover;
 }
-.popup__info-desc {
+.popup__info-desc,.popup__info-item {
   font-size: 14px;
   color: #283d32;
   line-height: 24px;
@@ -1299,35 +1300,20 @@ input {
   list-style: number;
   margin-left: 18px;
 }
-.popup__info-item {
-  font-size: 14px;
-  color: #283d32;
-  line-height: 24px;
-}
 .popup__confirm{
-  margin-top: 24px;
   text-align: center;
 }
 .popup__confirm-btn{
   width: 148px;
   height: 46px;
   cursor: pointer;
+  margin-top: 24px;
   background: url(img/btn_pc_lightgreen.svg) no-repeat center/cover;
   color: var(--txt-white);
 }
-/* .popup__event .popup__info-desc{
+.popup__success,.popup__email,.popup__event,.popup__reservation,.popup__ended  .popup__info{
   text-align: center;
 }
-.popup__email .popup__info-title{
-  text-align: center;
-} */
-.popup__success,.popup__email,.popup__event,.popup__reservation  .popup__info{
-  text-align: center;
-}
-/* .popup__email {
-  border-left: 8px solid #cb1f3b;
-  border-right: 8px solid #cb1f3b;
-} */
 .popup__content-red {
   border-left: 8px solid #cb1f3b;
   border-right: 8px solid #cb1f3b;
@@ -1340,6 +1326,25 @@ input {
 }
 .popup__content-red::after{
   background: url(img/bg_pc_pop_after_red.png) no-repeat center/cover;
+}
+.popup__info-mess{
+  display: flex;
+  width: 304px;
+  height: 140px;
+  margin: 22px auto 0; 
+  background: url(img/bg_pc_popup_mes.svg) no-repeat center/cover;
+  padding: 27px 20px;
+  box-sizing: border-box;
+}
+.popup__mess-img{
+  width: 64px;
+  height: 64px;
+}
+.popup__messenger{
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 10px;
+  margin-top: 12px;
 }
 /* <!-- //modal caseview --> */
 
@@ -1377,6 +1382,10 @@ input {
 .is-transition > .inner > .register__gift {
   animation: animationAppear 1.8s forwards;
 }
+.is-transition > .characters > .characters__mes {
+  animation: animationAppear 1.8s forwards;
+}
+
 
 @keyframes animationHeader {
   0% {

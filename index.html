@@ -210,8 +210,7 @@
               <ul class="game__info-list">
                 <li class="info__list-item">하루 최대 7번까지 수박을 깨고 숨겨진 선물을 받아가세요!</li>
                 <li class="info__list-item">수박을 1회 깨기 위해 60개의 방망이가 필요하며, <br>방망이는 시나리오, 도전, 토벌에서 고기를 사용하면<br
-                    class="only-mo"> 1:1 비율로 얻을 수
-                  있습니다.</li>
+                    class="only-mo"> 1:1 비율로 얻을 수 있습니다.</li>
               </ul>
             </div>
           </div>
@@ -428,30 +427,34 @@
         <p class="popup__info-desc">이메일이 정상적으로 등록 완료 되었습니다.</p>
       </div>
       <div class="popup__confirm">
-        <button class="popup__confirm-btn">확인</button>
+        <button class="popup__confirm-btn">등록 완료</button>
       </div>
     </div>
-    <div id="#caseview6" id="#caseview6" class="popup__content popup__reservation popup__content-red">
+    <div id="#caseview6" class="popup__content popup__reservation popup__content-red">
       <div class="popup__info">
         <h3 class="popup__info-title">hasla@crusader.com</h3>
         <p class="popup__info-desc">이미 등록 된 정보입니다. <br>확인 후 다시 등록해주세요.</p>
       </div>
       <div class="popup__confirm">
-        <button class="popup__confirm-btn">확인</button>
+        <button class="popup__confirm-btn">다시 입력</button>
+      </div>
+    </div>
+    <div id="#caseview7" class="popup__content popup__ended">
+      <div class="popup__info">
+        <p class="popup__info-desc">사전등록이 종료됐습니다! <br>게임 내에서 여름방학 미니게임을 즐겨주세요!</p>
+        <div class="popup__info-mess">
+          <img class="popup__mess-img" src="img/ic_pc_popup_mes.png" alt="">
+          <div class="popup__messenger">아직도 꿀잼게임 크퀘를 모르신다면? <br>망설이지 말고 <em class="txt-green">바로 다운로드 받기!</em></div>
+        </div>
+      </div>
+      <div class="popup__confirm">
+        <button class="popup__confirm-btn">다운로드</button>
       </div>
     </div>
   </div>
-
-  <div id="#caseview1" class="popup__content popup__privacy"></div>
-  <div id="#caseview2" class="popup__content popup__event"></div>
-  <div id="#caseview3" class="popup__content popup__confirm"></div>
-  <div id="#caseview4" class="popup__content popup__email popup__content-red"></div>
-  <div id="#caseview5" class="popup__content popup__success"></div>
-  <div id="#caseview6" class="popup__content popup__reservation popup__content-red"></div>
   <!-- Modal content -->
-</body>
 
-<!-- [D] 마크업 검수용, 개발제외 -->
+  <!-- [D] 마크업 검수용, 개발제외 -->
 <style>
 	.caseview{position:fixed;bottom:40px;left:3px;padding:5px;background:#d03965;z-index:9990;opacity:0.6}
 	.btn-open-caseview{padding:0 5px 3px 5px;color:yellow;background: transparent;}
@@ -467,38 +470,39 @@
 		<a href="#none" data-id="#caseview4" class="item js-openView">[팝업] 이메일 올바르게 등록 요청</a>
 		<a href="#none" data-id="#caseview5" class="item js-openView">[팝업] 이메일 등록 완료</a>
 		<a href="#none" data-id="#caseview6" class="item js-openView">[팝업] 확인 후 다시 등록 요청</a>
+		<a href="#none" data-id="#caseview7" class="item js-openView">[팝업] 사전 등록 실패</a>
 	</div>
 </div>
 <script>
 	$( document ).ready(function() {
      // play modal
-  var overLayModalView = $(".modal__caseview");
-  // var popupContent = $('.popup__reservation')
-  var popupContent = $('.popup__content')
+  const overLayModalView = $(".modal__caseview");
+  const popupContent = $('.popup__content')
   function playModalView(e) {
     e.preventDefault();
-    var targetId = $(this).data("id")
-    var targetPopup = $(targetId)
-    console.log(targetPopup);
-    overLayModalView.addClass("modal__center-caseview");
-    popupContent.removeClass('show');
-    targetId.addClass('show');
-    $("body").css("overflow", "hidden");
+    const targetIdCase = $(this).data("id")
+    $(".popup__content").each(function () {
+      const targetIdView = $(this).attr("id");
+      if(targetIdCase === targetIdView){
+        overLayModalView.css("display", 'block');
+        popupContent.removeClass('is_show');
+        $(this).addClass('is_show');
+        $("body").css("overflow", "hidden");
+      }
+    })
   }
-
   //close modal
   function closeModalView(e) {
-    overLayModalView.removeClass("modal__center-caseview");
-    popupContent.css('display', 'none');
+    overLayModalView.css("display", 'none');
+    $('.popup__content').removeClass('is_show');
     $("body").css("overflow", "auto");
   }
   $(".js-openView").click(playModalView);
   $(".modal__caseview").click(closeModalView);
   });
-	
 </script>
 <!-- [D] 마크업 검수용, 개발제외 -->
-
 <script src="script.js"></script>
 
+</body>
 </html>
