@@ -600,9 +600,62 @@
 }
 /* <!-- //modal nav --> */
 
+/* <!-- modal caseview --> */
+.popup__content {
+  width: 327px;
+  padding: 16px 20px 8px;
+}
+.popup__content::before{
+  width: 327px;
+  background: url(img/bg_mo_pop_before.png) no-repeat center/cover;
+}
+.popup__content::after{
+  width: 327px;
+  background: url(img/bg_mo_pop_after.png) no-repeat center/cover;
+}
+.popup__info-desc,.popup__info-item {
+  font-size: 11px;
+  line-height: 20px;
+}
+.popup__info-title{
+  font-size: 12px;
+  margin-top: 12px;
 }
 
+.popup__confirm-btn{
+  width: 224px;
+  height: 44px;
+  font-size: 12px;
+  background: url(img/btn_mo_lightgreen.png) no-repeat center/cover;
+}
+.popup__content-red .popup__confirm-btn{
+  background: url(img/btn_mo_red.png) no-repeat center/cover;
+}
+.popup__content-red::before{
+  background: url(img/bg_mo_pop_before_red.png) no-repeat center/cover;
+}
+.popup__content-red::after{
+  background: url(img/bg_mo_pop_after_red.png) no-repeat center/cover;
+}
+.popup__info-mess{
+  width: 267px;
+  height: 105px;
+  margin: 14px auto 0; 
+  background: url(img/bg_mo_popup_mes.png) no-repeat center/cover;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+.popup__mess-img{
+  width: 56px;
+  height: 56px;
+}
+.popup__messenger{
+  font-size: 10px;
+  margin-top: 5px;
+}
+/* <!-- //modal caseview --> */
 
+}
 
 @media screen and (max-width: 420px) {
   .spot__play {
