@@ -56,6 +56,7 @@ $(document).ready(function () {
         $(this).removeClass("is_active");
       }
     });
+
     if (scrollPosition > 0) {
       $(".header").addClass("bg-header");
     } else if (scrollPosition === 0) {

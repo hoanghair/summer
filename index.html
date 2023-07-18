@@ -125,7 +125,8 @@
                     </li>
                     <li class="checkbox">
                       <input class="checkbox__input" type="checkbox" name="" id="selectAll">
-                      <label class="checkbox__label" for="selectAll">내용을 확인 하였으며, 모두 동의합니다.<a class="more" href="">자세히 보기</a></label>
+                      <label class="checkbox__label" for="selectAll">내용을 확인 하였으며, 모두 동의합니다.<a class="more" href="">자세히
+                          보기</a></label>
                     </li>
                   </ul>
                 </div>
@@ -331,7 +332,6 @@
         </ul>
       </div>
       <!-- // floating -->
-
     </div>
     <!-- //Content -->
 
@@ -382,7 +382,8 @@
     </div>
     <div id="#caseview1" class="popup__content popup__privacy">
       <div class="popup__info">
-        <p class="popup__info-desc">NHN은 다음과 같이 개인정보를 수집 및 이용하고 있으며, 크루세이더 퀘스트의 사전 등록 및 관련 이벤트 참여를 위해 필요한 최소한의 정보이므로 동의해주시기 바랍니다.</p>
+        <p class="popup__info-desc">NHN은 다음과 같이 개인정보를 수집 및 이용하고 있으며, 크루세이더 퀘스트의 사전 등록 및 관련 이벤트 참여를 위해 필요한 최소한의 정보이므로
+          동의해주시기 바랍니다.</p>
         <h3 class="popup__info-title">&#91;개인정보 수집 및 이용안내&#93;</h3>
         <ol class="popup__info-list">
           <li class="popup__info-item">수집 및 이용 목적 : 크루세이더 퀘스트의 사전등록 참여자에 대한 안내, 관련 사무의 CS 처리</li>
@@ -415,7 +416,7 @@
     </div>
     <div id="#caseview4" class="popup__content popup__email popup__content-red">
       <div class="popup__info">
-        <h3 class="popup__info-title">이메일을 올바르게 등록해 주세요.</h3>
+        <h3 class="popup__info-desc">이메일을 올바르게 등록해 주세요.</h3>
       </div>
       <div class="popup__confirm">
         <button class="popup__confirm-btn">확인</button>
@@ -455,54 +456,75 @@
   <!-- Modal content -->
 
   <!-- [D] 마크업 검수용, 개발제외 -->
-<style>
-	.caseview{position:fixed;bottom:40px;left:3px;padding:5px;background:#d03965;z-index:9990;opacity:0.6}
-	.btn-open-caseview{padding:0 5px 3px 5px;color:yellow;background: transparent;}
-	.caseview a{display:block;padding:5px;color:#fff}
-	.caseview .item,.caseview .item-end{font-size: 12px;color:#fff}
-</style>
-<div class="caseview">
-	<button type="button" class="btn-open-caseview" onclick="$('.caseview__lst').toggle();">CaseView Toggle</button>
-	<div class="caseview__lst" style="display: none;">
-		<a href="#none" data-id="#caseview1" class="item js-openView">[팝업] 개인정보 수집안내</a>
-		<a href="#none" data-id="#caseview2" class="item js-openView">[팝업] 개인정보 수집 및 이용 동의</a>
-		<a href="#none" data-id="#caseview3" class="item js-openView">[팝업] 사전등록 결정 확인</a>
-		<a href="#none" data-id="#caseview4" class="item js-openView">[팝업] 이메일 올바르게 등록 요청</a>
-		<a href="#none" data-id="#caseview5" class="item js-openView">[팝업] 이메일 등록 완료</a>
-		<a href="#none" data-id="#caseview6" class="item js-openView">[팝업] 확인 후 다시 등록 요청</a>
-		<a href="#none" data-id="#caseview7" class="item js-openView">[팝업] 사전 등록 실패</a>
-	</div>
-</div>
-<script>
-	$( document ).ready(function() {
-     // play modal
-  const overLayModalView = $(".modal__caseview");
-  const popupContent = $('.popup__content')
-  function playModalView(e) {
-    e.preventDefault();
-    const targetIdCase = $(this).data("id")
-    $(".popup__content").each(function () {
-      const targetIdView = $(this).attr("id");
-      if(targetIdCase === targetIdView){
-        overLayModalView.css("display", 'block');
-        popupContent.removeClass('is_show');
-        $(this).addClass('is_show');
-        $("body").css("overflow", "hidden");
+  <style>
+    .caseview {
+      position: fixed;
+      bottom: 40px;
+      left: 3px;
+      padding: 5px;
+      background: #d03965;
+      z-index: 9990;
+      opacity: 0.6
+    }
+    .btn-open-caseview {
+      padding: 0 5px 3px 5px;
+      color: yellow;
+      background: transparent;
+    }
+    .caseview a {
+      display: block;
+      padding: 5px;
+      color: #fff
+    }
+    .caseview .item,
+    .caseview .item-end {
+      font-size: 12px;
+      color: #fff
+    }
+  </style>
+  <div class="caseview">
+    <button type="button" class="btn-open-caseview" onclick="$('.caseview__lst').toggle();">CaseView Toggle</button>
+    <div class="caseview__lst" style="display: none;">
+      <a href="#none" data-id="#caseview1" class="item js-openView">[팝업] 개인정보 수집안내</a>
+      <a href="#none" data-id="#caseview2" class="item js-openView">[팝업] 개인정보 수집 및 이용 동의</a>
+      <a href="#none" data-id="#caseview3" class="item js-openView">[팝업] 사전등록 결정 확인</a>
+      <a href="#none" data-id="#caseview4" class="item js-openView">[팝업] 이메일 올바르게 등록 요청</a>
+      <a href="#none" data-id="#caseview5" class="item js-openView">[팝업] 이메일 등록 완료</a>
+      <a href="#none" data-id="#caseview6" class="item js-openView">[팝업] 확인 후 다시 등록 요청</a>
+      <a href="#none" data-id="#caseview7" class="item js-openView">[팝업] 사전 등록 실패</a>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      // play modal
+      const overLayModalView = $(".modal__caseview");
+      const popupContent = $('.popup__content')
+      function playModalView(e) {
+        e.preventDefault();
+        const targetIdCase = $(this).data("id")
+        $(".popup__content").each(function () {
+          const targetIdView = $(this).attr("id");
+          if (targetIdCase === targetIdView) {
+            overLayModalView.css("display", 'block');
+            popupContent.removeClass('is_show');
+            $(this).addClass('is_show');
+            $("body").css("overflow", "hidden");
+          }
+        })
       }
-    })
-  }
-  //close modal
-  function closeModalView(e) {
-    overLayModalView.css("display", 'none');
-    $('.popup__content').removeClass('is_show');
-    $("body").css("overflow", "auto");
-  }
-  $(".js-openView").click(playModalView);
-  $(".modal__caseview").click(closeModalView);
-  });
-</script>
-<!-- [D] 마크업 검수용, 개발제외 -->
-<script src="script.js"></script>
+      //close modal
+      function closeModalView(e) {
+        overLayModalView.css("display", 'none');
+        $('.popup__content').removeClass('is_show');
+        $("body").css("overflow", "auto");
+      }
+      $(".js-openView").click(playModalView);
+      $(".modal__caseview").click(closeModalView);
+    });
+  </script>
+  <!-- [D] 마크업 검수용, 개발제외 -->
+
+  <script src="script.js"></script>
 
 </body>
 </html>
