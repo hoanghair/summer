@@ -87,7 +87,6 @@
     width: 14.759vw;
     height: 19.137vw;
     right: -14.759vw;
-    /* top: 17.386vw; */
   }
 
   .scrolldown {
@@ -98,7 +97,6 @@
   }
 
   /* <!-- //Spot Section --> */
-
   .register {
     padding: 10.006vw 0 16.823vw;
   }
@@ -203,7 +201,7 @@
     font-size: 1.501vw;
   }
 
-  /* /// */
+  /* <!-- Register Section --> */
   .register__gift {
     margin-top: 10.006vw;
   }
