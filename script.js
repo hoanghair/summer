@@ -145,6 +145,7 @@ $(document).ready(function () {
       $("#selectAll").prop("checked", false);
     }
   });
+  
   $("#selectAll").click(function () {
     $(".checkbox__input").prop("checked", $(this).prop("checked"));
   });

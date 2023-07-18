@@ -24,7 +24,6 @@
   /* // general */
 
   /* header */
-
   .header {
     padding: 3.002vw 3.002vw 0;
   }
@@ -55,7 +54,6 @@
   .spot {
     min-height: 880px;
   }
-
   .spot .inner {
     top: 1.501vw;
   }
@@ -67,7 +65,6 @@
     width: 58.161vw;
     height: 20.325vw;
   }
-
   .spot__desc {
     margin-top: 0.313vw;
     font-size: 1.751vw;
@@ -78,25 +75,23 @@
     height: 6.004vw;
     margin-top: 1.501vw;
   }
-
   .spot__app {
     margin-top: 2.502vw;
   }
-
   .spot__characters {
     width: 14.759vw;
     height: 19.137vw;
     right: -14.759vw;
   }
-
   .scrolldown {
     margin-bottom: 0;
   }
   .scrolldown__btn {
     padding-bottom: 1.063vw;
   }
-
   /* <!-- //Spot Section --> */
+
+   /* <!-- Register Section --> */
   .register {
     padding: 10.006vw 0 16.823vw;
   }
@@ -201,7 +196,6 @@
     font-size: 1.501vw;
   }
 
-  /* <!-- Register Section --> */
   .register__gift {
     margin-top: 10.006vw;
   }
@@ -226,7 +220,6 @@
     height: 3.752vw;
     font-size: 0.876vw;
   }
-
   .register .characters__item-img {
     width: 47.842vw;
     height: 17.323vw;
@@ -246,7 +239,6 @@
     font-size: 1.251vw;
     line-height: 2.001vw;
   }
-
   /* <!-- //Register Section --> */
 
   /* <!-- Event Section--> */
@@ -443,6 +435,7 @@
     height: 6.004vw;
   }
   /* <!-- // War Section --> */
+
   /* <!-- Precautions Section--> */
   .precautions {
     top: -0.125vw;
