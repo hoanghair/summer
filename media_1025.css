@@ -41,7 +41,7 @@
     width: 32px;
     height: 32px;
   }
-  .sns__link-youtube {
+  .sns__link--youtube {
     margin-left: 1.626vw;
   }
   /* //header */
@@ -142,6 +142,9 @@
     width: 88px;
     height: 38px;
     background: url(img/ic_mo_deco3.png) no-repeat center/cover;
+  }
+  .register::before {
+    display: none;
   }
   .form {
     width: 327px;
@@ -285,6 +288,9 @@
     height: 154px;
     background: url(img/bg_pc_land.svg) no-repeat bottom/cover;
   }
+  .event::before {
+    background: url(img/bg_mo_cloud.png) no-repeat center/contain;
+  }
   .event .inner {
     padding-bottom: 133px;
   }
@@ -411,6 +417,7 @@
   /* <!-- War Section--> */
   .war::before {
     width: 100%;
+    height: 552px;
   }
   .war .section__title {
     width: 219px;
@@ -427,15 +434,15 @@
   .war__image-list {
     display: block;
   }
-  .war__list-item:last-child {
+  .war__image-item:last-child {
     margin-left: 0;
     margin-top: 15px;
   }
-  .war__list-item {
+  .war__image-item {
     width: 327px;
     height: 187px;
   }
-  .war__list-img {
+  .war__item-img {
     padding: 0;
     border-radius: 28px;
   }
@@ -453,7 +460,7 @@
     padding: 0;
     border-radius: 22px;
   }
-  .war__list-btn {
+  .war__video-btn {
     width: 64px;
     height: 64px;
     background: url(img/btn_mo_play.png) no-repeat center/cover;
@@ -490,6 +497,9 @@
     margin-top: 10px;
     font-size: 11px;
     line-height: 16px;
+  }
+  .precautions__list-item:first-child {
+    margin-top: 0;
   }
   /* <!-- // Precautions Section --> */
 
@@ -648,6 +658,9 @@
     margin-top: 5px;
   }
   /* <!-- //modal caseview --> */
+  /* .is-transition > .characters > .characters__mes {
+    animation: animationAppear 1.8s forwards;
+  } */
 }
 
 @media screen and (max-width: 420px) {
